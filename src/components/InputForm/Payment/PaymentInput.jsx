@@ -2,9 +2,12 @@ import React from "react";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Badge from "react-bootstrap/Badge";
 import { BsFillInfoCircleFill } from "react-icons/bs";
+import { BsCheckCircle } from "react-icons/bs";
+import { CiCreditCard1 } from "react-icons/ci";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import PaymentButton from "./PaymentButton";
 import classes from "./PaymentInput.module.css";
+import PaymentIcons from "./PaymentIcons";
 
 const PaymentInput = () => {
   return (
@@ -17,6 +20,33 @@ const PaymentInput = () => {
           </p>
         </div>
         <div className={classes.card}>
+          <div className={classes.creditbox}>
+            <div className={classes.iconContainer}>
+              <CiCreditCard1
+                style={{
+                  width: "35px",
+                  height: "20px",
+                  borderRadius: "3.75px",
+                  border: "0.63",
+                  marginRight: "8px",
+                }}
+              />
+            </div>
+            <p className={classes.creditheading}>Credit & Debit Card</p>
+            <div className={classes.iconContainer}>
+              <BsCheckCircle
+                style={{
+                  width: "24px",
+                  height: "24px",
+                  borderRadius: "1000px",
+                  border: "0.63",
+                  color: "#1C2024",
+                  padding: "0.5px",
+                }}
+              />
+            </div>
+          </div>
+         <PaymentIcons/>
           <div className={classes.inputsbox}>
             <div className={classes.row}>
               <div className={classes.column}>
@@ -81,13 +111,19 @@ const PaymentInput = () => {
               </div>
             </div>
             <div className={classes.infoContainer}>
-                <p>You will be charged in AED</p>
-                <BsFillInfoCircleFill />
+              <p className={classes.infotext}>You will be charged in AED</p>
+              <BsFillInfoCircleFill style={{width: '13px' , height: '13px' ,top: '1.5px' , left: '1.5px' , color: '#7E808A', marginBottom: 'auto' , marginTop: '3px'}} />
             </div>
-            <div className={classes.row}>
-              <Button variant="primary" id="submit">
-                Submit
-              </Button>
+            <div className={classes.btnbox}>
+              <p className={classes.btnpara}>
+                By clicking “confirm & pay”, you agree to{" "}
+                <span className={classes.linkText}>
+                  Tickete’s general terms and conditions
+                </span>{" "}
+                and{" "}
+                <span className={classes.linkText}>cancellation policy</span>.
+              </p>
+              <PaymentButton/>
             </div>
           </div>
         </div>

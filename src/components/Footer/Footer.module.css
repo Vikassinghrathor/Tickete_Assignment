@@ -1,0 +1,31 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 0px 32px 0px; /* Adjust as needed */
+  gap: 64px;
+  color: #000000; /* Move this property to the end to ensure it takes precedence */
+}
+
+.logo {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footerLink {
+  color: #808080; /* Grey color */
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+}

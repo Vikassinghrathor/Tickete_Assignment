@@ -3,7 +3,9 @@ import classes from './InputForm.module.css';
 import InfoBanner from './InfoBanner';
 import DetailsInput from './DetailsInput';
 import AdditionalDetails from './AdditionalDetails';
-import PaymentInput from './PaymentInput';
+import PaymentInput from './Payment/PaymentInput';
+import Footer from '../Footer/Footer';
+
 
 const InputForm = () => {
   return (
@@ -15,6 +17,7 @@ const InputForm = () => {
       <DetailsInput/>
       <AdditionalDetails/>
       <PaymentInput/>
+      <Footer/>
       </div>
       <div className={classes.confirmation}>
 

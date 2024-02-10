@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+.HeaderTimer {
+  width: 100%;
+  height: 40px;
+  background-color: #000000;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.para {
+  width: 100%;
+  height: 40px; /* Adjusted height to match HeaderTimer height */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 40px; /* Adjusted line-height to match HeaderTimer height */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+}

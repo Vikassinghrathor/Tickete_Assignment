@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import FaqItem from "./FaqItem";
 
-import {Img, Line, List, Text } from "../CheckoutPay/export";
+import {Img, Line, Text } from "../CheckoutPay/export";
 import PaymentButton from "../InputForm/Payment/PaymentButton";
 
 const DesktopFaqsection = (props) => {
+  const [isDescriptionVisible, setIsDescriptionVisible] = useState(Array(4).fill(false));
   const customButtonStyle = {
     backgroundColor: '#000000',
     color: '#ffffff',
@@ -13,6 +15,13 @@ const DesktopFaqsection = (props) => {
     justifyContent: 'center',
     borderRadius: '12px'
   };
+
+  const handleToggleDescription = (index) => {
+    setIsDescriptionVisible((prev) =>
+      prev.map((value, i) => (i === index ? !value : false))
+    );
+  };
+
   return (
     <>
       <div className={props.className}>
@@ -58,104 +67,32 @@ const DesktopFaqsection = (props) => {
             </div>
           </div>
           <div className="flex flex-col gap-6 items-start justify-start max-w-[690px] w-full">
-            <div className="bg-white-A700 border border-blue_gray-200 border-solid flex flex-col items-start justify-start sm:px-5 px-7 py-6 rounded-[16px] w-full">
-              <div className="flex flex-col items-start justify-start w-full">
-                <div className="flex sm:flex-col flex-row gap-6 items-center justify-start w-full">
-                  <Img
-                    className="h-6 w-6"
-                    src="images/img_plus_gray_700_01.svg"
-                    alt="plus_Two"
-                  />
-                  <Text
-                    className="flex-1 text-gray-900_01 text-lg w-auto"
-                    size="txtOpenSansSemiBold18"
-                  >
-                    {props?.herearesomeof}
-                  </Text>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white-A700 border border-blue_gray-200 border-solid flex flex-col items-start justify-start sm:px-5 px-7 py-6 rounded-[16px] w-full">
-              <div className="flex flex-col gap-5 items-start justify-start w-full">
-                <div className="flex sm:flex-col flex-row gap-6 items-center justify-start w-full">
-                  <Img
-                    className="h-6 w-6"
-                    src="images/img_close_gray_700_01.svg"
-                    alt="close_One"
-                  />
-                  <Text
-                    className="flex-1 text-gray-900_01 text-lg w-auto"
-                    size="txtOpenSansSemiBold18"
-                  >
-                    {props?.herearesomeofOne}
-                  </Text>
-                </div>
-                <div className="flex flex-col items-center justify-center pb-6 md:pl-10 pl-12 sm:pl-5 w-full">
-                  <Text
-                    className="leading-[24.00px] max-w-[586px] md:max-w-full text-base text-gray-700_01"
-                    size="txtOpenSans16"
-                  >
-                    {props?.descriptionTwo}
-                  </Text>
-                </div>
-              </div>
-            </div>
-            <List
-              className="flex flex-col gap-6 items-center w-full"
-              orientation="vertical"
-            >
-              <div className="bg-white-A700 border border-blue_gray-200 border-solid flex flex-1 flex-col items-start justify-start sm:px-5 px-7 py-6 rounded-[16px] w-full">
-                <div className="flex flex-col items-start justify-start w-full">
-                  <div className="flex sm:flex-col flex-row gap-6 items-center justify-start w-full">
-                    <Img
-                      className="h-6 w-6"
-                      src="images/img_plus_gray_700_01.svg"
-                      alt="plus"
-                    />
-                    <Text
-                      className="flex-1 text-gray-900_01 text-lg w-auto"
-                      size="txtOpenSansSemiBold18"
-                    >
-                      {props?.herearesomeof1}
-                    </Text>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white-A700 border border-blue_gray-200 border-solid flex flex-1 flex-col items-start justify-start sm:px-5 px-7 py-6 rounded-[16px] w-full">
-                <div className="flex flex-col items-start justify-start w-full">
-                  <div className="flex flex-row gap-6 items-center justify-start w-full">
-                    <Img
-                      className="h-6 w-6"
-                      src="images/img_plus_gray_700_01.svg"
-                      alt="plus"
-                    />
-                    <Text
-                      className="flex-1 text-gray-900_01 text-lg w-auto"
-                      size="txtOpenSansSemiBold18"
-                    >
-                      {props?.herearesomeof2}
-                    </Text>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white-A700 border border-blue_gray-200 border-solid flex flex-1 flex-col items-start justify-start sm:px-5 px-7 py-6 rounded-[16px] w-full">
-                <div className="flex flex-col items-start justify-start w-full">
-                  <div className="flex sm:flex-col flex-row gap-6 items-center justify-start w-full">
-                    <Img
-                      className="h-6 w-6"
-                      src="images/img_plus_gray_700_01.svg"
-                      alt="plus"
-                    />
-                    <Text
-                      className="flex-1 text-gray-900_01 text-lg w-auto"
-                      size="txtOpenSansSemiBold18"
-                    >
-                      {props?.herearesomeof3}
-                    </Text>
-                  </div>
-                </div>
-              </div>
-            </List>
+          {[
+                {
+                  title: props.herearesomeof,
+                  description: props.descriptionTwo,
+                },
+                {
+                  title: props.herearesomeof1,
+                  description: null, // Add your own description for this item
+                },
+                {
+                  title: props.herearesomeof2,
+                  description: null, // Add your own description for this item
+                },
+                {
+                  title: props.herearesomeof3,
+                  description: null, // Add your own description for this item
+                },
+              ].map((item, index) => (
+                <FaqItem
+                  key={index}
+                  title={item.title}
+                  description={item.description}
+                  isDescriptionVisible={isDescriptionVisible[index]}
+                  onClick={() => handleToggleDescription(index)}
+                />
+              ))}
           </div>
         </div>
         <Line className="bg-gray-300_01 h-px w-full" />

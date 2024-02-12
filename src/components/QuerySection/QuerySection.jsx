@@ -1,8 +1,18 @@
 import React from "react";
 
-import { Button, Img, Line, List, Text } from "../CheckoutPay/export";
+import {Img, Line, List, Text } from "../CheckoutPay/export";
+import PaymentButton from "../InputForm/Payment/PaymentButton";
 
 const DesktopFaqsection = (props) => {
+  const customButtonStyle = {
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    marginTop: '20px',
+    width: '129px',
+    height: '50px',
+    justifyContent: 'center',
+    borderRadius: '12px'
+  };
   return (
     <>
       <div className={props.className}>
@@ -35,16 +45,11 @@ const DesktopFaqsection = (props) => {
                 >
                   {props?.stillneedhelp}
                 </Text>
-                <Button
-                  className="!text-blue_gray-50 cursor-pointer font-opensans font-semibold min-w-[129px] rounded-[12px] text-base text-center"
-                  shape="round"
-                  color="black_900"
-                  size="md"
-                  variant="fill"
-                >
-                  {props?.chatbuttontext}
-                </Button>
-              </div>
+                <PaymentButton
+            title="Chat with us"
+            buttonStyle={customButtonStyle}
+           />              
+           </div>
               <Img
                 className="h-[100px] w-[157px]"
                 src="images/img_aboutillustrations.svg"

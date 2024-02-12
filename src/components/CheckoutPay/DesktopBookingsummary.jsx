@@ -1,9 +1,17 @@
 import React from "react";
 
 import { Button, Img, List, PagerIndicator, Text } from "./export";
+import PaymentButton from "../InputForm/Payment/PaymentButton";
 import { Link } from "react-router-dom";
 
 const DesktopBookingsummary = (props) => {
+  const customButtonStyle = {
+    backgroundColor: '#000000',
+    color: '#ffffff',
+    width: '352px',
+    height: '56px',
+    justifyContent: 'center'
+  };
   return (
     <>
       <div className={props.className}>
@@ -307,23 +315,10 @@ const DesktopBookingsummary = (props) => {
           </div>
           <div className="flex flex-col gap-5 items-start justify-start w-full">
             {props?.termandconditionOne}
-            <Button
-              className="cursor-pointer flex items-center justify-center min-w-[352px] rounded-[16px]"
-              leftIcon={
-                <Img
-                  className="h-[22px] mb-[3px] mr-3"
-                  src="images/img_location.svg"
-                  alt="location"
-                />
-              }
-              color="black_900"
-              size="md"
-              variant="fill"
-            >
-              <div className="!text-blue_gray-50 font-opensans font-semibold text-left text-lg">
-                {props?.confirmPayTwo}
-              </div>
-            </Button>
+            <PaymentButton
+            title="Confirm & Pay"
+            buttonStyle={customButtonStyle}
+           />
           </div>
         </div>
       </div>

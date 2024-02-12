@@ -2,7 +2,7 @@
   /* border: 2px solid black; */
   width: 792px;
   height: 368px;
-  margin-top: 32px;
+  margin-top: 60px;
 }
 
 .textbox {
@@ -27,11 +27,13 @@
   line-height: 24px;
   height: 24px;
   color: #60646C;
+  margin-top: 20px;
 }
 
 .inputsbox {
   width: 792px;
   height: 216px;
+  margin-top: 40px;
 }
 
 .row {

@@ -1,31 +1,28 @@
-.Main{
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+.Main {
   display: flex;
-  /* border: 2px solid black; */
   width: 100%;
   justify-content: space-between;
   margin-top: 100px;
 }
 
-.inputs{
-  /* border: 2px solid black; */
+.inputs {
   width: 792px;
   margin-left: 120px;
 }
 
-.confirmation{
-  /* border: 2px solid black; */
+.confirmation {
   width: 384px;
   margin-right: 120px;
   height: 600px;
 }
 
-.heading{
-  font-family: roboto , serif;
-  font-weight: 500px;
+.heading {
+  font-family: "Roboto Serif", serif;
+  font-weight: 500; /* Use a numeric value or a keyword */
   font-size: 57px;
   line-height: 64px;
   letter-spacing: 0.6%;
   color: #1C2024;
-  /* border: 2px solid black; */ 
 }
-

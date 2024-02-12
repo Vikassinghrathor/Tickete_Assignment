@@ -1,16 +1,17 @@
 import React from "react";
 
-import { Button, Img, List, PagerIndicator, Text } from "./export";
+import { Button, Img, List, Text } from "./export";
 import PaymentButton from "../InputForm/Payment/PaymentButton";
 import { Link } from "react-router-dom";
+import Carousel from "./Carousel";
 
 const DesktopBookingsummary = (props) => {
   const customButtonStyle = {
-    backgroundColor: '#000000',
-    color: '#ffffff',
-    width: '352px',
-    height: '56px',
-    justifyContent: 'center'
+    backgroundColor: "#000000",
+    color: "#ffffff",
+    width: "352px",
+    height: "56px",
+    justifyContent: "center",
   };
   return (
     <>
@@ -18,78 +19,7 @@ const DesktopBookingsummary = (props) => {
         <div className="flex flex-col gap-3 items-start justify-start w-full">
           <div className="flex flex-col gap-4 items-start justify-start pt-4 px-4 w-full">
             <div className="flex flex-col items-start justify-start w-auto">
-              <div className="h-[198px] relative rounded-[16px] w-full">
-                <Img
-                  className="h-[198px] m-auto object-cover rounded-[16px] w-full"
-                  src="images/Booking_Summary_carousel.png"
-                  alt="rectangleSixtySix"
-                />
-                <div className="absolute inset-[0] justify-center m-auto rounded-[16px] w-full">
-                  <Img
-                    className="h-[198px] m-auto object-cover rounded-[16px] w-full"
-                    src="images/Booking_Summary_carousel2.png"
-                    alt="rectangleSixtyFive"
-                  />
-                  <div className="absolute bottom-[0] flex flex-col h-6 md:h-auto inset-x-[0] items-center justify-between mx-auto pb-4 px-3 w-[352px]">
-                    <PagerIndicator
-                      className="flex gap-1.5 h-2 items-center justify-start w-[108px]"
-                      count={7}
-                      activeCss="inline-block cursor-pointer h-2 bg-gray-50 w-7 rounded"
-                      activeIndex={1}
-                      inactiveCss="inline-block cursor-pointer rounded-[50%] h-1.5 bg-gray-50_8c w-1.5"
-                      selectedWrapperCss="inline-block"
-                      unselectedWrapperCss="inline-block"
-                    />
-                  </div>
-                  <div className="absolute flex flex-row h-max inset-[0] items-center justify-between m-auto px-3 w-[352px]">
-                    <Button
-                      className="flex h-8 items-center justify-center w-8"
-                      shape="circle"
-                      color="gray_50_bf"
-                      size="sm"
-                      variant="fill"
-                    >
-                      <Img
-                        className="h-4"
-                        src="images/img_arrowleft.svg"
-                        alt="arrowleft"
-                      />
-                    </Button>
-                    <Button
-                      className="flex h-8 items-center justify-center w-8"
-                      shape="circle"
-                      color="gray_50_bf"
-                      size="sm"
-                      variant="fill"
-                    >
-                      <Img
-                        className="h-4"
-                        src="images/img_arrowright.svg"
-                        alt="arrowright"
-                      />
-                    </Button>
-                  </div>
-                  <div className="absolute flex flex-col items-center justify-start left-[3%] top-[6%] w-auto">
-                    <Button
-                      className="cursor-pointer flex items-center justify-center min-w-[91px] rounded"
-                      leftIcon={
-                        <Img
-                          className="h-3.5 mr-1 my-px"
-                          src="images/img_ticket.svg"
-                          alt="ticket"
-                        />
-                      }
-                      color="white_A700"
-                      size="xs"
-                      variant="fill"
-                    >
-                      <div className="!text-gray-900_01 font-opensans font-semibold text-left text-xs">
-                        {props?.bestseller}
-                      </div>
-                    </Button>
-                  </div>
-                </div>
-              </div>
+            <Carousel/>
             </div>
             <div className="flex flex-col gap-6 items-start justify-start w-full">
               <div className="flex flex-col gap-0.5 items-start justify-start w-full">
@@ -316,9 +246,9 @@ const DesktopBookingsummary = (props) => {
           <div className="flex flex-col gap-5 items-start justify-start w-full">
             {props?.termandconditionOne}
             <PaymentButton
-            title="Confirm & Pay"
-            buttonStyle={customButtonStyle}
-           />
+              title="Confirm & Pay"
+              buttonStyle={customButtonStyle}
+            />
           </div>
         </div>
       </div>

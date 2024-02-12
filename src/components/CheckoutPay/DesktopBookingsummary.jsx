@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Button, Img, List, PagerIndicator, Text } from "./export";
+import { Link } from "react-router-dom";
 
 const DesktopBookingsummary = (props) => {
   return (
@@ -12,13 +13,13 @@ const DesktopBookingsummary = (props) => {
               <div className="h-[198px] relative rounded-[16px] w-full">
                 <Img
                   className="h-[198px] m-auto object-cover rounded-[16px] w-full"
-                  src="../../assets/Booking_Summary_carousel.png"
+                  src="images/Booking_Summary_carousel.png"
                   alt="rectangleSixtySix"
                 />
                 <div className="absolute inset-[0] justify-center m-auto rounded-[16px] w-full">
                   <Img
                     className="h-[198px] m-auto object-cover rounded-[16px] w-full"
-                    src="../../assets/Booking_Summary_carousel2.png"
+                    src="images/Booking_Summary_carousel2.png"
                     alt="rectangleSixtyFive"
                   />
                   <div className="absolute bottom-[0] flex flex-col h-6 md:h-auto inset-x-[0] items-center justify-between mx-auto pb-4 px-3 w-[352px]">
@@ -42,7 +43,7 @@ const DesktopBookingsummary = (props) => {
                     >
                       <Img
                         className="h-4"
-                        src="../../assets/img_arrowleft.svg"
+                        src="images/img_arrowleft.svg"
                         alt="arrowleft"
                       />
                     </Button>
@@ -55,7 +56,7 @@ const DesktopBookingsummary = (props) => {
                     >
                       <Img
                         className="h-4"
-                        src="../../assets/img_arrowright.svg"
+                        src="images/img_arrowright.svg"
                         alt="arrowright"
                       />
                     </Button>
@@ -66,7 +67,7 @@ const DesktopBookingsummary = (props) => {
                       leftIcon={
                         <Img
                           className="h-3.5 mr-1 my-px"
-                          src="../../assets/img_ticket.svg"
+                          src="images/img_ticket.svg"
                           alt="ticket"
                         />
                       }
@@ -88,7 +89,7 @@ const DesktopBookingsummary = (props) => {
                   <div className="flex flex-row gap-1 items-center justify-start w-auto">
                     <Img
                       className="h-3.5 w-3.5"
-                      src="../../assets/img_airplane.svg"
+                      src="images/img_airplane.svg"
                       alt="airplane"
                     />
                     <div className="flex flex-row gap-0.5 items-start justify-start w-auto">
@@ -131,7 +132,7 @@ const DesktopBookingsummary = (props) => {
                   <div className="flex flex-col items-center justify-center w-5">
                     <Img
                       className="h-5 w-5"
-                      src="../../assets/img_television.svg"
+                      src="images/img_television.svg"
                       alt="television"
                     />
                   </div>
@@ -154,7 +155,7 @@ const DesktopBookingsummary = (props) => {
                     <div className="flex flex-col items-center justify-center w-5">
                       <Img
                         className="h-5 w-5"
-                        src="../../assets/img_calendar.svg"
+                        src="images/img_calendar.svg"
                         alt="calendar"
                       />
                     </div>
@@ -181,7 +182,7 @@ const DesktopBookingsummary = (props) => {
                     <div className="flex flex-col items-center justify-center w-5">
                       <Img
                         className="h-5 w-5"
-                        src="../../assets/img_clock.svg"
+                        src="images/img_clock.svg"
                         alt="clock"
                       />
                     </div>
@@ -209,7 +210,7 @@ const DesktopBookingsummary = (props) => {
                   <div className="flex flex-col items-center justify-center w-5">
                     <Img
                       className="h-5 w-5"
-                      src="../../assets/img_users.svg"
+                      src="images/img_users.svg"
                       alt="users"
                     />
                   </div>
@@ -230,7 +231,7 @@ const DesktopBookingsummary = (props) => {
           <div className="flex flex-col gap-4 items-start justify-start pb-5 w-full">
             <Img
               className="h-px w-full"
-              src="../../assets/img_divider_gray_300_01.svg"
+              src="images/img_divider_gray_300_01.svg"
               alt="divider_Three"
             />
             <div className="flex flex-row items-center justify-between px-4 w-full">
@@ -244,7 +245,7 @@ const DesktopBookingsummary = (props) => {
               </div>
               <Img
                 className="h-4 w-4"
-                src="../../assets/img_plus_blue_gray_400.svg"
+                src="images/img_plus_blue_gray_400.svg"
                 alt="plus_One"
               />
             </div>
@@ -276,7 +277,7 @@ const DesktopBookingsummary = (props) => {
                 leftIcon={
                   <Img
                     className="h-3.5 mb-[3px] mr-1"
-                    src="../../assets/img_user_green_600.svg"
+                    src="images/img_user_green_600.svg"
                     alt="user"
                   />
                 }
@@ -299,7 +300,7 @@ const DesktopBookingsummary = (props) => {
               </Text>
               <Img
                 className="h-4 w-4"
-                src="../../assets/img_inbox_blue_gray_400.svg"
+                src="images/img_inbox_blue_gray_400.svg"
                 alt="inbox_Three"
               />
             </div>
@@ -311,7 +312,7 @@ const DesktopBookingsummary = (props) => {
               leftIcon={
                 <Img
                   className="h-[22px] mb-[3px] mr-3"
-                  src="../../assets/img_location.svg"
+                  src="images/img_location.svg"
                   alt="location"
                 />
               }
@@ -357,22 +358,22 @@ DesktopBookingsummary.defaultProps = {
       <span className="text-gray-700_01 font-opensans text-left font-normal">
         By clicking “confirm & pay”, you agree to{" "}
       </span>
-      <a
-        href="javascript:"
+      <Link
+        to="/terms-and-conditions"
         className="text-indigo-500 font-opensans text-left font-normal underline"
       >
         Tickete’s general terms and conditions
-      </a>
+      </Link>
       <span className="text-gray-700_01 font-opensans text-left font-normal">
         {" "}
         and{" "}
       </span>
-      <a
-        href="javascript:"
+      <Link
+        to="/cancellation-policy"
         className="text-indigo-500 font-opensans text-left font-normal underline"
       >
         cancellation policy
-      </a>
+      </Link>
       <span className="text-gray-700_01 font-opensans text-left font-normal">
         .
       </span>

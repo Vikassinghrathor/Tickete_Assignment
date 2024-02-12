@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import DesktopBookingsummary from './DesktopBookingsummary';
-import {Text} from './Text';
+import { Text } from './Text';
 
 const DesktopSummary = () => {
   return (
@@ -12,22 +13,22 @@ const DesktopSummary = () => {
             <span className="text-gray-700_01 font-opensans text-left font-normal">
               By clicking “confirm & pay”, you agree to{' '}
             </span>
-            <a
-              href="javascript:"
+            <Link
+              to="/terms-and-conditions"
               className="text-indigo-500 font-opensans text-left font-normal underline"
             >
               Tickete’s general terms and conditions
-            </a>
+            </Link>
             <span className="text-gray-700_01 font-opensans text-left font-normal">
               {' '}
               and{' '}
             </span>
-            <a
-              href="javascript:"
+            <Link
+              to="/cancellation-policy"
               className="text-indigo-500 font-opensans text-left font-normal underline"
             >
               cancellation policy
-            </a>
+            </Link>
             <span className="text-gray-700_01 font-opensans text-left font-normal">
               .
             </span>

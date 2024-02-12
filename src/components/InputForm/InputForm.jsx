@@ -4,8 +4,7 @@ import InfoBanner from './InfoBanner';
 import DetailsInput from './DetailsInput';
 import AdditionalDetails from './AdditionalDetails';
 import PaymentInput from './Payment/PaymentInput';
-import Footer from '../Footer/Footer';
-
+import DesktopSummary from '../CheckoutPay/DesktopSummary';
 
 const InputForm = () => {
   return (
@@ -17,10 +16,9 @@ const InputForm = () => {
       <DetailsInput/>
       <AdditionalDetails/>
       <PaymentInput/>
-      <Footer/>
       </div>
       <div className={classes.confirmation}>
-
+      <DesktopSummary/>
       </div>
       </div>
     </>

@@ -1,15 +1,15 @@
 import React from 'react';
 import classes from './Footer.module.css';
-import Logo from '../../assets/Company_Logo.svg';
+import FooterImg from './FooterImg';
 
 const Footer = () => {
   return (
     <>
       <div className={classes.footer}>
-        <img src={Logo} alt='error' className={classes.logo} />
-        <hr />
+        <FooterImg style={{padding: '100px'}}/>
+        <hr style={{border: '1px solid #3C3F44' , marginTop: '100px'}} />
         <div className={classes.footerLinks}>
-          <span className={classes.footerLink}>Made in heart</span>
+          <span className={classes.footerLink}>Made with ❤️</span>
           <span className={classes.footerLink}>Privacy policy</span>
           <span className={classes.footerLink}>Terms of usage</span>
           <span className={classes.footerLink}>Cancellation policy</span>

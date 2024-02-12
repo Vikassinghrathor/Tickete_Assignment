@@ -1,6 +1,7 @@
 .Main {
   width: 792px;
-  height: 874px;
+  /* height: 874px; */
+  border: 2px solid blue;
 }
 
 .card {

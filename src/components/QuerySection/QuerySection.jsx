@@ -6,6 +6,7 @@ const DesktopFaqsection = (props) => {
   return (
     <>
       <div className={props.className}>
+      <div style={{padding: '120px'}}> 
         <div className="flex md:flex-col flex-row gap-6 items-start justify-start w-auto md:w-full">
           <div className="flex flex-col gap-8 items-start justify-start w-[486px] sm:w-full">
             <div className="flex flex-col items-start justify-start w-full">
@@ -153,6 +154,7 @@ const DesktopFaqsection = (props) => {
           </div>
         </div>
         <Line className="bg-gray-300_01 h-px w-full" />
+        </div>
       </div>
     </>
   );

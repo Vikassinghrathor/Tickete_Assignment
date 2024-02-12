@@ -9,6 +9,7 @@ import PaymentButton from "./PaymentButton";
 import classes from "./PaymentInput.module.css";
 import PaymentIcons from "./PaymentIcons";
 
+
 const PaymentInput = () => {
   return (
     <>

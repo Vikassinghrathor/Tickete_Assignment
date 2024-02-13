@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based web application designed for a checkout process. It utilizes various components to create a seamless user experience. The project follows a modular structure, organized into folders for better code management and readability.
 
-## Available Scripts
+Live Demo Link -: "https://tickete-assignment-vikas2809.vercel.app/"
 
-In the project directory, you can run:
+Folder Structure
 
-### `npm start`
+Header
+Contains two files:
+Header.jsx
+HeaderTimer.jsx
+Responsible for navigation and displaying ticket holding time.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+InputForm
+Contains sub-folder Payment:
+PaymentButton.jsx
+PaymentIcons.jsx
+PaymentInput.jsx
+InputForm.jsx
+InfoBanner.jsx
+DetailsInput.jsx
+AdditionalDetails.jsx
+Handles input forms and payment components.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Footer
 
-### `npm test`
+ComingSoon
+Features that will be available soon.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+CheckoutPay
+Payment summary information.
 
-### `npm run build`
+Technologies Used -:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. React Router Dom: Used for handling routing within the application.
+2. React Bootstrap: Utilized for pre-styled React components, aiding in a responsive design.
+3. Tailwind CSS: Used for utility-first CSS to enhance styling capabilities.
+4. Module Based CSS: Follows a modular approach for styling, enhancing maintainability.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Project Structure -: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Entry Point
+// index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
 
-### `npm run eject`
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+App Component -: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+// App.jsx
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Checkout from './pages/Checkout';
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path='/' element={<Checkout />} />
+      </Routes>
+    </Router>
+  );
+}
 
-## Learn More
+export default App;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Checkout Page
 
-### Code Splitting
+// pages/Checkout.jsx
+import React from 'react';
+import Header from '../components/Header/Header';
+import InputForm from '../components/InputForm/InputForm';
+import Footer from '../components/Footer/Footer';
+import QuerySection from '../components/QuerySection/QuerySection';
+import ComingSoon from '../components/ComingSoon/ComingSoon';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+const Checkout = () => {
+  return (
+    <>
+      <Header />
+      <InputForm />
+      <ComingSoon />
+      <QuerySection />
+      <Footer />
+    </>
+  );
+}
 
-### Analyzing the Bundle Size
+export default Checkout;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Dependencies
+1. react
+2. react-dom
+3. react-router-dom
+4. react-bootstrap
+5. tailwindcss
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Usage
+1. Clone the repository.
+2. Install dependencies using npm install.
+3. Run the application using npm start.
 
-### Advanced Configuration
+Feel free to explore the project and adapt it to your specific needs. If you encounter any issues or have questions, please refer to the documentation of the used technologies or reach out to the project contributors.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Thanks & Regards
+vikas singh rathore
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

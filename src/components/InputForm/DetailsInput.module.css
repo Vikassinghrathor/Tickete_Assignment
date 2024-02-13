@@ -79,3 +79,15 @@
   margin-bottom: 10px;
   color: #B9BBC6;
 }
+
+.DetailsInput_countryCodeContainer__f4My+ #countryCodeInput.iti__tel-input {
+  padding: 0 !important;
+}
+
+.DetailsInput_countryCodeContainer__f4My+ #countryCodeInput.iti__tel-input + label {
+  display: flex !important;
+  align-items: center !important;
+}
+
+
+

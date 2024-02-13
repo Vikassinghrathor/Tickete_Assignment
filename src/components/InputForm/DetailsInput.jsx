@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import classes from "./DetailsInput.module.css";
@@ -6,14 +6,28 @@ import "intl-tel-input/build/css/intlTelInput.css";
 import intlTelInput from "intl-tel-input";
 
 const DetailsInput = () => {
+  const countryCodeInputRef = useRef();
+
   useEffect(() => {
     // Initialize the country code input field
-    const countryCodeInput = document.getElementById("countryCodeInput");
-    intlTelInput(countryCodeInput, {
-      initialCountry: "auto",
+    const iti = intlTelInput(countryCodeInputRef.current, {
+      initialCountry: "in", // ISO country code for India
       separateDialCode: true,
+      utilsScript: "intl-tel-input/build/js/utils.js", // You may need to adjust the path
+      nationalMode: false, // Keep nationalMode set to false
+      formatOnDisplay: false, // Avoid formatting on initial display
+      onCountryChange: (e, countryData) => {
+        const newCountryCode = `+${countryData.dialCode}`;
+        countryCodeInputRef.current.value = newCountryCode;
+      },
     });
+
+    // Set the default country code
+    const selectedCountry = iti.getSelectedCountryData();
+    const defaultCountryCode = `+${selectedCountry.dialCode}`;
+    countryCodeInputRef.current.value = defaultCountryCode;
   }, []);
+
 
   return (
     <>
@@ -45,12 +59,15 @@ const DetailsInput = () => {
           <div className={classes.row}>
             <div className={classes.column}>
               <div className={classes.countryCodeContainer}>
-                    <input
-                    type="text"
-                    id="countryCodeInput"
-                    placeholder="+1"
-                    required
-                  />
+              <label>
+                <input
+                  type="text"
+                  id="countryCodeInput"
+                  placeholder="+91"
+                  required
+                  ref={countryCodeInputRef}
+                />
+                </label>
               </div>
             </div>
             <div className={classes.column}>

@@ -1,9 +1,20 @@
-import React from "react";
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
+import React, { useEffect } from "react";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import classes from "./DetailsInput.module.css";
+import "intl-tel-input/build/css/intlTelInput.css";
+import intlTelInput from "intl-tel-input";
 
 const DetailsInput = () => {
+  useEffect(() => {
+    // Initialize the country code input field
+    const countryCodeInput = document.getElementById("countryCodeInput");
+    intlTelInput(countryCodeInput, {
+      initialCountry: "auto",
+      separateDialCode: true,
+    });
+  }, []);
+
   return (
     <>
       <div className={classes.Main}>
@@ -33,18 +44,14 @@ const DetailsInput = () => {
 
           <div className={classes.row}>
             <div className={classes.column}>
-              <FloatingLabel
-                controlId="floatingCountryCode"
-                label="Country Code *"
-                className={classes.mb3}
-              >
-                <Form.Control
-                  type="text"
-                  placeholder="+1"
-                  required
-                  className={classes.customInput}
-                />
-              </FloatingLabel>
+              <div className={classes.countryCodeContainer}>
+                    <input
+                    type="text"
+                    id="countryCodeInput"
+                    placeholder="+1"
+                    required
+                  />
+              </div>
             </div>
             <div className={classes.column}>
               <FloatingLabel

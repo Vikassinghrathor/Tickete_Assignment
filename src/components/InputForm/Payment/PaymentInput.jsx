@@ -2,8 +2,7 @@ import React from "react";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Badge from "react-bootstrap/Badge";
 import { BsFillInfoCircleFill } from "react-icons/bs";
-import { BsCheckCircle } from "react-icons/bs";
-import { CiCreditCard1 } from "react-icons/ci";
+import { Text, Img } from "../../CheckoutPay/export";
 import Form from "react-bootstrap/Form";
 import PaymentButton from "./PaymentButton";
 import classes from "./PaymentInput.module.css";
@@ -21,32 +20,28 @@ const PaymentInput = () => {
           </p>
         </div>
         <div className={classes.card}>
-          <div className={classes.creditbox}>
-            <div className={classes.iconContainer}>
-              <CiCreditCard1
-                style={{
-                  width: "35px",
-                  height: "20px",
-                  borderRadius: "3.75px",
-                  border: "0.63",
-                  marginRight: "8px",
-                }}
-              />
+          <div className="flex flex-row sm:gap-10 items-center justify-between w-full">
+          <div className="flex flex-row gap-3 items-center justify-start w-auto">
+            <div className="flex flex-col h-6 md:h-auto items-center justify-start w-auto">
+              <div className="bg-white-A700 border border-gray-300_01 border-solid flex flex-col items-center justify-start px-[7px] rounded-[3px] w-full">
+                <Img
+                  className="h-5 w-5"
+                  src="images/img_creditcard.svg"
+                  alt="creditcard"
+                />
+              </div>
             </div>
-            <p className={classes.creditheading}>Credit & Debit Card</p>
-            <div className={classes.iconContainer}>
-              <BsCheckCircle
-                style={{
-                  width: "24px",
-                  height: "24px",
-                  borderRadius: "1000px",
-                  border: "0.63",
-                  color: "#1C2024",
-                  padding: "0.5px",
-                }}
-              />
-            </div>
+            <Text
+              className="text-base text-gray-900_01 w-auto"
+              size="txtOpenSansSemiBold16Gray90001"
+            >
+            Credit & debit card
+            </Text>
           </div>
+          <div className="bg-gray-900_01 flex flex-col h-6 items-center justify-start p-2 rounded-[50%] w-6">
+            <div className="bg-gray-50 h-2 rounded-[50%] w-2"></div>
+          </div>
+          </div> 
          <PaymentIcons/>
           <div className={classes.inputsbox}>
             <div className={classes.row}>
